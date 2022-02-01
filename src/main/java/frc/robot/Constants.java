@@ -28,6 +28,10 @@ public class Constants {
     *   public static final int kRightMotor2Port = 3; 
     * }
     */ 
+    public static final class JoystickConstants{
+        public static final int kArcadeDriveSpeedAxis = 1;
+        public static final int kArcadeDriveTurnAxis = 4;
+    }
 
     /*
     private final int LEFT_TRIGGER = 2;

@@ -1,0 +1,52 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "Victor SPX[0]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[1]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[2]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Victor SPX[3]": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/Climber": "Subsystem",
+      "/LiveWindow/Drivetrain": "Subsystem",
+      "/LiveWindow/Launcher": "Subsystem",
+      "/LiveWindow/Scooper": "Subsystem",
+      "/LiveWindow/Ungrouped/DifferentialDrive[1]": "DifferentialDrive",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/Autonomous Command": "Command",
+      "/SmartDashboard/Climber": "Subsystem",
+      "/SmartDashboard/Drivetrain": "Subsystem",
+      "/SmartDashboard/Launcher": "Subsystem",
+      "/SmartDashboard/Scooper": "Subsystem",
+      "/SmartDashboard/Scooper_command": "Command"
+    }
+  },
+  "NetworkTables": {
+    "SmartDashboard": {
+      "Drivetrain": {
+        "open": true
+      },
+      "open": true
+    }
+  }
+}

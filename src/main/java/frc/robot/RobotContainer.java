@@ -91,7 +91,9 @@ public XboxController getXboxController1() {
   */
   public Command getAutonomousCommand() {
     // The selected command will be run in autonomous
-    return m_chooser.getSelected();
+    //return m_chooser.getSelected();
+
+return new Autonomous(.5, 10, m_drivetrain) ;   
   }
   
 

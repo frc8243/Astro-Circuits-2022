@@ -35,6 +35,8 @@ public class Drivetrain extends SubsystemBase {
     //private final PWMVictorSPX RB_motor = new PWMVictorSPX(1);
     //private final PWMVictorSPX RF_motor = new PWMVictorSPX(0);
 
+
+
     private final WPI_VictorSPX LB_motor = new WPI_VictorSPX(3);
     private final WPI_VictorSPX LF_motor = new WPI_VictorSPX(2);
     private final WPI_VictorSPX RB_motor = new WPI_VictorSPX(1);
@@ -50,7 +52,7 @@ public class Drivetrain extends SubsystemBase {
 
         LF_motor.setInverted(false);
 
-        RF_motor.setInverted(true);
+        RF_motor.setInverted(false);
 
         LB_motor.follow(LF_motor);
         RB_motor.follow(RF_motor);

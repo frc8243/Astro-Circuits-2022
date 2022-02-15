@@ -70,7 +70,7 @@ private final XboxController xboxController1 = new XboxController(0);
   }
 
   /**
-   Buttong bindings go below
+   Button bindings go below
    */
   private void configureButtonBindings() {
 

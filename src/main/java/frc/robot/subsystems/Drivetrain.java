@@ -78,9 +78,9 @@ public class Drivetrain extends SubsystemBase {
 
 
     public void setMotors(double leftSpeed, double rightSpeed){
-        // LF_motor.set(leftSpeed);
-        // RF_motor.set(-rightSpeed);
-        m_robotDrive.arcadeDrive(leftSpeed, rightSpeed);
+         LF_motor.set(leftSpeed);
+         RF_motor.set(-rightSpeed);
+        //m_robotDrive.arcadeDrive(leftSpeed, rightSpeed);
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

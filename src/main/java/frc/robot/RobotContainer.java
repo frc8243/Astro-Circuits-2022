@@ -60,8 +60,8 @@ private final XboxController xboxController1 = new XboxController(0);
     SmartDashboard.putData("Auto Mode", m_chooser);
 
     m_drivetrain.setDefaultCommand(new ArcadeDrive(m_drivetrain,
-      () -> -xboxController1.getRawAxis(JoystickConstants.kArcadeDriveSpeedAxis),
-      () -> xboxController1.getRawAxis(JoystickConstants.kArcadeDriveTurnAxis))
+      () -> xboxController1.getRawAxis(JoystickConstants.kArcadeDriveSpeedAxis),
+      () -> -xboxController1.getRawAxis(JoystickConstants.kArcadeDriveTurnAxis))
     );
   }
 

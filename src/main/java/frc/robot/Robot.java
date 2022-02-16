@@ -17,6 +17,11 @@ import edu.wpi.first.hal.FRCNetComm.tResourceType;
 
 import java.lang.ModuleLayer.Controller;
 
+import com.analog.adis16448.frc.ADIS16448_IMU;
+//import com.analog.adis16448.frc.ADIS16448_IMU.CalibrationTime;
+import edu.wpi.first.wpilibj.GyroBase;
+import edu.wpi.first.wpilibj.SPI;
+
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -57,6 +62,8 @@ public class Robot extends TimedRobot {
     private final int START_BUTTON = 8;
     private final int BACK_BUTTON = 7;
   */
+  public static final ADIS16448_IMU imu = new ADIS16448_IMU();
+  //public static final ADIS16448_IMU imu =new ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, ADIS16448_IMU.CalibrationTime._1s);
 
     @Override
     public void robotInit() {
@@ -135,6 +142,7 @@ System.out.println("paper box");
     @Override
     public void teleopPeriodic() {
 
+        System.out.println(imu.getAngle());
        // if (Controller.getRawButton(A_BUTTON)){
             //do something
         //}

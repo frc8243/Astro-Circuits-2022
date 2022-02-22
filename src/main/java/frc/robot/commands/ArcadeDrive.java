@@ -18,9 +18,6 @@ public class ArcadeDrive extends CommandBase {
         addRequirements(drivetrain);
 
 
-
-        
-
     }
 
     // Called when the command is initially scheduled.

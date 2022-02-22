@@ -11,8 +11,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 
-import com.analog.adis16448.frc.ADIS16448_IMU;
-
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.*;
 
@@ -24,7 +22,7 @@ public class RobotContainer {
 
 // The robot's subsystems
     public final Drivetrain m_drivetrain = new Drivetrain();
-    public final Launcher m_launcher = new Launcher();
+    public final Arm m_launcher = new Arm();
     public final Scooper m_scooper = new Scooper();
     public final Climber m_climber = new Climber();
 
@@ -76,6 +74,7 @@ private final XboxController xboxController1 = new XboxController(0);
    Button bindings go below
    */
   private void configureButtonBindings() {
+    //XboxController()
 
   }
 

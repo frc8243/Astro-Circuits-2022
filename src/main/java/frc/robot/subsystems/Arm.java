@@ -37,9 +37,8 @@ public class Arm extends SubsystemBase {
 
     }
     public void setMotors(double power){
-        //LF_motor.set(leftSpeed);
-        //RF_motor.set(-rightSpeed);
-       //m_robotDrive.arcadeDrive(leftSpeed, rightSpeed);
+
+       arm_motor.set(power);
    }
     @Override
     public void periodic() {

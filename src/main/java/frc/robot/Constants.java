@@ -44,12 +44,18 @@ public class Constants {
     private final int START_BUTTON = 8;
     private final int BACK_BUTTON = 7;*/
     
+    public static final class XboxConstants {
+        public static final int OPEN_ARM = 2; //left trigger
+        public static final int CLOSE_ARM = 3; //right trigger
+    }
    
     public static final class JoystickConstants{
         //for some reason, turn axis makes it go forward and back
-        public static final int kArcadeDriveSpeedAxis = 4;
+        public static final int kArcadeDriveSpeedAxis = 4; //left joystick
         
-        public static final int kArcadeDriveTurnAxis = 5;
+        public static final int kArcadeDriveTurnAxis = 5; //right joystick
+
+
     }
 }
 

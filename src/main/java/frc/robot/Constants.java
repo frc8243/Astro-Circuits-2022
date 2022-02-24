@@ -48,10 +48,23 @@ public class Constants {
     public static final class JoystickConstants{
         //for some reason, turn axis makes it go forward and back
         public static final int kArcadeDriveSpeedAxis = 4;
-
-        
-        
         public static final int kArcadeDriveTurnAxis = 5;
+    }
+    public static final class XboxConstants{
+        public final int LEFT_TRIGGER = 2;
+        public final int RIGHT_TRIGGER = 3;
+        public final int LEFT_BUMPER = 5;
+        public final int RIGHT_BUMPER = 6;
+        public final int LEFT_STICK_X = 0;
+        public final int LEFT_STICK_Y = 1;
+        public final int RIGHT_STICK_X = 4;
+        public final int RIGHT_STICK_Y = 5;
+        public final int A_BUTTON = 1;
+        public final int B_BUTTON = 2;
+        public final int X_BUTTON = 3;
+        public final int Y_BUTTON = 4;
+        public final int START_BUTTON = 8;
+        public final int BACK_BUTTON = 7;
     }
 }
 

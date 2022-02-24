@@ -67,8 +67,8 @@ private final int A_BUTTON = 1;
     SmartDashboard.putData("Auto Mode", m_chooser);
 
     m_drivetrain.setDefaultCommand(new ArcadeDrive(m_drivetrain,
-      () -> xboxController1.getRawAxis(JoystickConstants.kArcadeDriveSpeedAxis),
-      () -> -xboxController1.getRawAxis(JoystickConstants.kArcadeDriveTurnAxis))
+      () -> xboxController1.getRawAxis(XboxConstants.RIGHT_STICK_X),
+      () -> -xboxController1.getRawAxis(XboxConstants.RIGHT_STICK_Y))
     );
 
     
@@ -83,6 +83,13 @@ private final int A_BUTTON = 1;
    Button bindings go below
    */
   private void configureButtonBindings() {
+
+    final JoystickButton lb = new JoystickButton(xboxController1,5);
+    final JoystickButton rb = new JoystickButton(xboxController1,6);
+
+    lb.whenPressed(new ArmUp(m_arm, -0.5));
+    rb.whenPressed(new ArmUp(m_arm, 0.5));
+
     //XboxController()
 
     //xboxController1.getRawButton(A_BUTTON);

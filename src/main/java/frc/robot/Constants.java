@@ -57,8 +57,8 @@ public class Constants {
         public final int RIGHT_BUMPER = 6;
         public final int LEFT_STICK_X = 0;
         public final int LEFT_STICK_Y = 1;
-        public final int RIGHT_STICK_X = 4;
-        public final int RIGHT_STICK_Y = 5;
+        public final static int RIGHT_STICK_X = 4;
+        public final static int RIGHT_STICK_Y = 5;
         public final int A_BUTTON = 1;
         public final int B_BUTTON = 2;
         public final int X_BUTTON = 3;

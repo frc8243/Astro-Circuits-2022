@@ -13,11 +13,12 @@ public class ArmUp extends CommandBase {
         this.armSubsystem = armSubsystem;
         this.power = power;
         addRequirements(armSubsystem);
+        
     }
 
     @Override
     public void initialize() {
-        System.out.println("Intake cmd started!");
+        System.out.println("Arm is moving");
     }
 
     @Override

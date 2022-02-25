@@ -5,10 +5,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Drivetrain;
 
 public class TurnTo90 extends CommandBase {
+
+  private Drivetrain drivetrain;
   /** Creates a new TurnTo90. */
-  public TurnTo90() {
+  public TurnTo90(Drivetrain drivetrain) {
+    this.drivetrain = drivetrain;
+    addRequirements(drivetrain);
+
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

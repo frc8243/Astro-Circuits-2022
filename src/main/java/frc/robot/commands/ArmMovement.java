@@ -4,12 +4,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Arm;
 
-public class ArmUp extends CommandBase {
+public class ArmMovement extends CommandBase {
 
     private final Arm armSubsystem;
     private final double power;
 
-    public ArmUp(Arm armSubsystem, double power) {
+    public ArmMovement(Arm armSubsystem, double power) {
         this.armSubsystem = armSubsystem;
         this.power = power;
         addRequirements(armSubsystem);
@@ -17,18 +17,20 @@ public class ArmUp extends CommandBase {
 
     @Override
     public void initialize() {
-        System.out.println("Intake cmd started!");
+        System.out.println("Arm is moving up");
     }
 
     @Override
     public void execute() {
 
         this.armSubsystem.setMotors(power);
+        System.out.println("Power is " + power);
+
     }
 
     @Override
     public void end(boolean interrupted) {
-        System.out.println("Intake cmd ended!");
+        System.out.println("Arm up cmd ended!");
     }
 
     @Override

@@ -4,12 +4,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
 
-public class BallSpit extends CommandBase {
+public class BallSuckSpit extends CommandBase {
 
     private final Intake intake;
     public double speed;
 
-    public BallSpit(Intake intakeSubsystem, double speed) {
+    public BallSuckSpit(Intake intakeSubsystem, double speed) {
         this.intake = intakeSubsystem;
         this.speed = 0.5;
         addRequirements(intakeSubsystem);

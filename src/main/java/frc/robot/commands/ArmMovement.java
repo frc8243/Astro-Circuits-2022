@@ -24,7 +24,7 @@ public class ArmMovement extends CommandBase {
     public void execute() {
 
         this.armSubsystem.setMotors(power);
-        System.out.println("Power is " + power);
+        System.out.println("Arm Power is " + power);
 
     }
 

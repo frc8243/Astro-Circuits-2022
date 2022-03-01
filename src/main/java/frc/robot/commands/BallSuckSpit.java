@@ -7,11 +7,11 @@ import frc.robot.subsystems.Intake;
 public class BallSuckSpit extends CommandBase {
 
     private final Intake intake;
-    public double speed;
+    private final double power;
 
-    public BallSuckSpit(Intake intakeSubsystem, double speed) {
+    public BallSuckSpit(Intake intakeSubsystem, double power) {
         this.intake = intakeSubsystem;
-        this.speed = 0.5;
+        this.power = power;
         addRequirements(intakeSubsystem);
     }
 
@@ -24,8 +24,9 @@ public class BallSuckSpit extends CommandBase {
 
     @Override
     public void execute() {
-        this.intake.setMotor(speed);
-        //SmartDashboard.putNumber("Intake speed ", speed);
+        this.intake.setMotor(power);
+        System.out.println("Intake Power is " + power);
+        //SmartDashboard.putNumber("Intake power ", power);
     }
 
     @Override

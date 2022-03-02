@@ -70,6 +70,7 @@ private final XboxController xboxController1 = new XboxController(0);
       () -> -xboxController1.getRawAxis(XboxConstants.RIGHT_STICK_X))
     );
     m_arm.setDefaultCommand(new ArmMovement(m_arm, 0));
+    m_intake.setDefaultCommand(new ArmMovement(m_arm, 0));
 
     
     

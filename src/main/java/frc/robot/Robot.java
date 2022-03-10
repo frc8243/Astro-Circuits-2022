@@ -94,6 +94,7 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void disabledInit() {
+        m_robotContainer.disabledInit();
     }
 
     @Override
@@ -132,6 +133,9 @@ System.out.println("paper box");
         // this line or comment it out.
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
+        }
+        else {
+            m_robotContainer.enabledInit();
         }
     }
 

@@ -28,6 +28,7 @@ import edu.wpi.first.wpilibj.SPI;
 
 // import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import frc.robot.Constants;
 
 
 
@@ -41,10 +42,10 @@ public class Drivetrain extends SubsystemBase {
 
 
 
-    private final WPI_VictorSPX LB_motor = new WPI_VictorSPX(3);
-    private final WPI_VictorSPX LF_motor = new WPI_VictorSPX(2);
-    private final WPI_VictorSPX RB_motor = new WPI_VictorSPX(1);
-    private final WPI_VictorSPX RF_motor = new WPI_VictorSPX(0);
+    private final WPI_VictorSPX LB_motor = new WPI_VictorSPX(Constants.DriveConstants.kLeftBack);
+    private final WPI_VictorSPX LF_motor = new WPI_VictorSPX(Constants.DriveConstants.kLeftFront);
+    private final WPI_VictorSPX RB_motor = new WPI_VictorSPX(Constants.DriveConstants.kRightBack);
+    private final WPI_VictorSPX RF_motor = new WPI_VictorSPX(Constants.DriveConstants.kRightFront);
     public final DifferentialDrive m_robotDrive = new DifferentialDrive(LF_motor, RF_motor);
 
     public static AHRS ahrs;

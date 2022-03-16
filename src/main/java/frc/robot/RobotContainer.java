@@ -12,7 +12,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ConditionalCommand;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.XboxController;
 
@@ -108,7 +110,22 @@ public class RobotContainer {
     // The selected command will be run in autonomous
     // return m_chooser.getSelected();
 
-    return new Autonomous(.5, 10, m_drivetrain);
+    //return new Autonomous(.5, 10, m_drivetrain);
+  
+  return new SequentialCommandGroup(
+    new ArmDown(m_armSystem),
+    new Autonomous(0.5, 1, m_drivetrain),
+    new ParallelCommandGroup(
+      new Autonomous(0.1, 0.5, m_drivetrain),
+      new BallSuckSpit(m_intake, 1.0)
+    ),
+    new Autonomous(-0.5, 2, m_drivetrain),
+    new TurnNdegrees(-135, m_drivetrain),
+    new ArmUp(m_armSystem),
+    new Autonomous(0.2, 0.3, m_drivetrain),
+    new BallSuckSpit(m_intake, -0.5)
+  );
+  
   }
 
   

@@ -1,7 +1,7 @@
 {
   "MainWindow": {
     "GLOBAL": {
-      "height": "1009",
+      "height": "1057",
       "maximized": "1",
       "style": "0",
       "userScale": "2",
@@ -14,12 +14,12 @@
     "###FMS": {
       "Collapsed": "0",
       "Pos": "7,743",
-      "Size": "235,169"
+      "Size": "283,146"
     },
     "###Joysticks": {
       "Collapsed": "0",
       "Pos": "373,589",
-      "Size": "796,240"
+      "Size": "796,73"
     },
     "###NetworkTables": {
       "Collapsed": "0",

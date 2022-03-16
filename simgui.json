@@ -51,6 +51,7 @@
       "/SmartDashboard/Arm": "Subsystem",
       "/SmartDashboard/ArmSystem": "Subsystem",
       "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/Auton": "String Chooser",
       "/SmartDashboard/Autonomous Command": "Command",
       "/SmartDashboard/Climber": "Subsystem",
       "/SmartDashboard/Drivetrain": "Subsystem",

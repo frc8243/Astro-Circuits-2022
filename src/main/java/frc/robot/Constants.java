@@ -23,10 +23,6 @@ import com.ctre.phoenix.motorcontrol.StickyFaults;
  */
 public class Constants {
 
-
-
-
-   
     public static final class DriveConstants {
        public static final int kRightFront = 12;
        public static final int kRightBack = 13;

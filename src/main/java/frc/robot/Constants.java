@@ -28,14 +28,14 @@ public class Constants {
 
    
     public static final class DriveConstants {
-       public static final int kRightFront = 0;
-       public static final int kRightBack = 1;
-       public static final int kLeftFront = 2;
-       public static final int kLeftBack = 3; 
+       public static final int kRightFront = 12;
+       public static final int kRightBack = 13;
+       public static final int kLeftFront = 14;
+       public static final int kLeftBack = 15; 
     }
 
     public static final class ArmConstants {
-        public static final int kArmMotor = 5;
+        public static final int kArmMotor = 10;
     }
     
     /*

@@ -72,7 +72,9 @@ public class RobotContainer {
 
     CommandBase position1=  new SequentialCommandGroup(
     new ParallelCommandGroup(
-      new Autonomous(1, 2, m_drivetrain),
+      
+    
+    new Autonomous(1, 2, m_drivetrain),
       new ArmDown(m_armSystem)
     ),
     new ParallelCommandGroup(

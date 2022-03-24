@@ -11,7 +11,7 @@ public class ArmSystem extends SubsystemBase  {
 
     private final CANSparkMax armMotor;
 
-    private static final double ARM_SPEED_UP = .2;
+    private static final double ARM_SPEED_UP = .3;
     private static final double ARM_SPEED_DOWN = -.2;
     private static final double ARM_HOLD_UP = .05;
     private static final double ARM_HOLD_DOWN = -.08;

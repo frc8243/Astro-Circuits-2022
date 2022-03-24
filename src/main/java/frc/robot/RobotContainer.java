@@ -71,34 +71,68 @@ public class RobotContainer {
     m_intake.setDefaultCommand(new BallSuckSpit(m_intake, 0));
 
     CommandBase position1=  new SequentialCommandGroup(
-    new ArmDown(m_armSystem),
-    new Autonomous(0.5, 1, m_drivetrain),
     new ParallelCommandGroup(
-      new Autonomous(0.1, 0.5, m_drivetrain),
-      new BallSuckSpit(m_intake, 1.0)
+      new Autonomous(1, 2, m_drivetrain),
+      new ArmDown(m_armSystem)
     ),
-    new Autonomous(-0.5, 2, m_drivetrain),
-    new TurnNdegrees(-135, m_drivetrain),
-    new ArmUp(m_armSystem),
-    new Autonomous(0.2, 0.3, m_drivetrain),
-    new BallSuckSpit(m_intake, -0.5)
+    new ParallelCommandGroup(
+      new BallSuckSpit(m_intake, -0.5), //test if negative is in or out
+      new Autonomous(1, 1, m_drivetrain)
+    ),
+    new TurnNdegrees(180, m_drivetrain),
+    new Autonomous(1, 4, m_drivetrain),
+    new ParallelCommandGroup(
+      new Autonomous(1, 2, m_drivetrain),
+      new TurnNdegrees(45, m_drivetrain),
+      new ArmUp(m_armSystem)
+    ),
+    new Autonomous(0, 0.1, m_drivetrain),
+    new BallSuckSpit(m_intake, 1)
   );
   m_chooser.addOption("position1", position1);
 
   CommandBase position2=  new SequentialCommandGroup(
-    new ArmDown(m_armSystem),
-    new Autonomous(0.5, 1, m_drivetrain),
     new ParallelCommandGroup(
-      new Autonomous(0.1, 0.5, m_drivetrain),
-      new BallSuckSpit(m_intake, 1.0)
+      new Autonomous(1, 2, m_drivetrain),
+      new ArmDown(m_armSystem)
     ),
-    new Autonomous(-0.5, 2, m_drivetrain),
-    new TurnNdegrees(-135, m_drivetrain),
-    new ArmUp(m_armSystem),
-    new Autonomous(0.2, 0.3, m_drivetrain),
-    new BallSuckSpit(m_intake, -0.5)
+    new ParallelCommandGroup(
+      new BallSuckSpit(m_intake, -0.5), //test if negative is in or out
+      new Autonomous(1, 1, m_drivetrain)
+    ),
+    new TurnNdegrees(180, m_drivetrain),
+    new Autonomous(1, 4, m_drivetrain),
+    new ParallelCommandGroup(
+      new Autonomous(1, 2, m_drivetrain),
+      new TurnNdegrees(45, m_drivetrain),
+      new ArmUp(m_armSystem)
+    ),
+    new Autonomous(0, 0.1, m_drivetrain),
+    new BallSuckSpit(m_intake, 1)
   );
   m_chooser.addOption("position2", position2);
+
+  
+  CommandBase position3=  new SequentialCommandGroup(
+    new ParallelCommandGroup(
+      new Autonomous(1, 2, m_drivetrain),
+      new ArmDown(m_armSystem)
+    ),
+    new ParallelCommandGroup(
+      new BallSuckSpit(m_intake, -0.5), //test if negative is in or out
+      new Autonomous(1, 1, m_drivetrain)
+    ),
+    new TurnNdegrees(180, m_drivetrain),
+    new Autonomous(1, 4, m_drivetrain),
+    new ParallelCommandGroup(
+      new Autonomous(1, 2, m_drivetrain),
+      new TurnNdegrees(45, m_drivetrain),
+      new ArmUp(m_armSystem)
+    ),
+    new Autonomous(0, 0.1, m_drivetrain),
+    new BallSuckSpit(m_intake, 1)
+  );
+  m_chooser.addOption("position3", position3);
   SmartDashboard.putData("Auton", m_chooser);
   try{
   CameraServer.startAutomaticCapture(1);

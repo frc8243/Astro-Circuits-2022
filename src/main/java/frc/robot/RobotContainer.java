@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.ConditionalCommand;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import edu.wpi.first.wpilibj2.command.ParallelRaceGroup;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -71,26 +72,31 @@ public class RobotContainer {
     m_intake.setDefaultCommand(new BallSuckSpit(m_intake, 0));
 
     CommandBase position1=  new SequentialCommandGroup(
-    new ParallelCommandGroup(
-      
-    
-    new Autonomous(1, 2, m_drivetrain),
-      new ArmDown(m_armSystem)
-    ),
-    new ParallelCommandGroup(
-      new BallSuckSpit(m_intake, -0.5), //test if negative is in or out
-      new Autonomous(1, 1, m_drivetrain)
-    ),
-    new TurnNdegrees(180, m_drivetrain),
-    new Autonomous(1, 4, m_drivetrain),
-    new ParallelCommandGroup(
-      new Autonomous(1, 2, m_drivetrain),
+      new ParallelCommandGroup(
+        new ArmUp(m_armSystem),
+        new Autonomous(1, 2, m_drivetrain)
+      ),
+      new BallSuckSpit(m_intake, -0.5),
+      new Autonomous(-1, 4, m_drivetrain),
+      new ParallelCommandGroup(
+        new TurnNdegrees(180, m_drivetrain),
+        new ArmDown(m_armSystem)
+      ),
+      new Autonomous(1, 1, m_drivetrain),
       new TurnNdegrees(45, m_drivetrain),
-      new ArmUp(m_armSystem)
-    ),
-    new Autonomous(0, 0.1, m_drivetrain),
-    new BallSuckSpit(m_intake, 1)
-  );
+      new ParallelCommandGroup(
+        new BallSuckSpit(m_intake, 0.5),
+        new Autonomous(0.75, 1, m_drivetrain)
+      ),
+      new TurnNdegrees(-225, m_drivetrain),
+      new Autonomous(1, 5, m_drivetrain),
+      new ParallelCommandGroup(
+        new ArmUp(m_armSystem),
+        new Autonomous(1, 0.5, m_drivetrain)
+      ),
+      new BallSuckSpit(m_intake, -0.5)
+    );
+  ;
   m_chooser.addOption("position1", position1);
 
   CommandBase position2=  new SequentialCommandGroup(

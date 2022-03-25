@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.XboxController;
 
 public class RobotContainer {
@@ -71,17 +72,9 @@ public class RobotContainer {
     m_intake.setDefaultCommand(new BallSuckSpit(m_intake, 0));
 
     CommandBase position1=  new SequentialCommandGroup(
-    new ArmDown(m_armSystem),
-    new Autonomous(0.5, 1, m_drivetrain),
-    new ParallelCommandGroup(
-      new Autonomous(0.1, 0.5, m_drivetrain),
-      new BallSuckSpit(m_intake, 1.0)
-    ),
-    new Autonomous(-0.5, 2, m_drivetrain),
-    new TurnNdegrees(-135, m_drivetrain),
     new ArmUp(m_armSystem),
-    new Autonomous(0.2, 0.3, m_drivetrain),
-    new BallSuckSpit(m_intake, -0.5)
+    new BallSuckSpit(m_intake, -0.5),
+    new Autonomous(-1, 2, m_drivetrain)
   );
   m_chooser.addOption("position1", position1);
 

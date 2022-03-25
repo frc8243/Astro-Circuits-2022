@@ -31,7 +31,7 @@ public class Constants {
     }
 
     public static final class ArmConstants {
-        public static final int kArmMotor = 10;
+        public static final int kArmMotor = 11;
     }
     
     /*

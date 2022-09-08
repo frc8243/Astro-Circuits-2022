@@ -105,7 +105,7 @@ public class RobotContainer {
     System.out.println("Camera not found");
 
   }
-  //CameraServer.startAutomaticCapture();
+  CameraServer.startAutomaticCapture();
   }
 
   public static RobotContainer getInstance() {

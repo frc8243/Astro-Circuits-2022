@@ -68,7 +68,7 @@ public class RobotContainer {
 
     m_drivetrain.setDefaultCommand(new ArcadeDrive(m_drivetrain,
         () -> -xboxController1.getRawAxis(XboxConstants.LEFT_STICK_Y),
-        () -> -xboxController1.getRawAxis(XboxConstants.RIGHT_STICK_X)));
+        () -> xboxController1.getRawAxis(XboxConstants.RIGHT_STICK_X)));
     // m_arm.setDefaultCommand(new ArmMovement(m_arm, 0));
     m_intake.setDefaultCommand(new BallSuckSpit(m_intake, 0));
 

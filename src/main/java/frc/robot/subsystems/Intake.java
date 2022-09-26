@@ -38,7 +38,7 @@ public class Intake extends SubsystemBase {
         intake_motor.set(power);
     }
     public Intake() {
-        filter = new SlewRateLimiter(2.5);
+        filter = new SlewRateLimiter(2.75);
     }
 
     @Override

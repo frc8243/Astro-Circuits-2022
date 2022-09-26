@@ -127,7 +127,7 @@ public class RobotContainer {
     // ArmMovement(m_arm, -0.5));
     new JoystickButton(xboxController1, XboxConstants.B_BUTTON).whenHeld(new BallSuckSpit(m_intake, 0.9));
     new JoystickButton(xboxController1, XboxConstants.X_BUTTON).whenHeld(new BallSuckSpit(m_intake, -0.5));
-    new JoystickButton(xboxController1, XboxConstants.Y_BUTTON).whenPressed(new SequentialCommandGroup(new Autonomous(.30, 5, m_drivetrain)));
+    // new JoystickButton(xboxController1, XboxConstants.Y_BUTTON).whenHeld(new Autonomous(.30, 5, m_drivetrain));
 
     new JoystickButton(xboxController1, XboxConstants.RIGHT_BUMPER).whenPressed(new ConditionalCommand(new ArmUp(m_armSystem), new PrintCommand("Arm Already Up"), m_armSystem::armIsDown),false);                                                                                                 
     new JoystickButton(xboxController1, XboxConstants.LEFT_BUMPER).whenPressed(new ConditionalCommand(new ArmDown(m_armSystem), new PrintCommand("Arm Is Already Down"), m_armSystem::armIsUp),false);

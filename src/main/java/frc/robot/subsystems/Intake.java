@@ -31,15 +31,15 @@ import edu.wpi.first.math.filter.SlewRateLimiter;
 public class Intake extends SubsystemBase {
     SlewRateLimiter filter;
     
-    private CANSparkMax intake_motor = new CANSparkMax(10, MotorType.kBrushed);
+    private CANSparkMax intake_motor = new CANSparkMax(9, MotorType.kBrushed);
 
     public void setMotor(double power){
-        power = filter.calculate(power);
+        // power = filter.calculate(power);
         intake_motor.set(power);
     }
-    public Intake() {
-        filter = new SlewRateLimiter(2.75);
-    }
+    // public Intake() {
+    //     filter = new SlewRateLimiter(2.75);
+    // }
 
     @Override
     public void periodic() {

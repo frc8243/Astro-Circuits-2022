@@ -29,7 +29,7 @@ import edu.wpi.first.math.filter.SlewRateLimiter;
  *
  */
 public class Intake extends SubsystemBase {
-    SlewRateLimiter filter;
+    // SlewRateLimiter filter;
     
     private CANSparkMax intake_motor = new CANSparkMax(9, MotorType.kBrushed);
 

@@ -243,5 +243,14 @@ public class RobotContainer {
   public void enabledInit() {
     m_armSystem.armEnabled();
   }
+  public void setAngle(double targetAngle, double currentAngle){
+    currentAngle = ahrs.getAngle();
+    if (currentAngle >= 220 && currentAngle <= 260){
+       System.out.println("Within Target Angle");
+    }
+    else {
+       System.out.println("Not Within Target Angle");
+    }
+}
 
 }

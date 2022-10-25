@@ -98,7 +98,14 @@ public class Drivetrain extends SubsystemBase {
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    public void setAngle(double targetAngle){
+         if (currentAngle >= 220 && currentAngle <= 260){
+            System.out.println("Within Target Angle");
+         }
+         else {
+            System.out.println("Not Within Target Angle");
+         }
+    }
 
 }
 

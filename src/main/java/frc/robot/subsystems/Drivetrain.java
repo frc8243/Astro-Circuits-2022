@@ -52,7 +52,7 @@ public class Drivetrain extends SubsystemBase {
 
     public static AHRS ahrs;
     private static double currentAngle = 0;
-    private static double targetAngle = 0;
+    private static double targetYaw = 0;
     private static double currentYaw = 0;
     private static double currentRoll = 0;
 
@@ -82,13 +82,17 @@ public class Drivetrain extends SubsystemBase {
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-        currentAngle = ahrs.getAngle();
         currentRoll = ahrs.getRoll();
         currentYaw = ahrs.getYaw();
-        SmartDashboard.putNumber("Angle", currentAngle);
+        targetYaw = -45; /* This number is in degrees : ) */
         SmartDashboard.putNumber("Roll", currentRoll);
         SmartDashboard.putNumber("Yaw", currentYaw);
-        
+        if (currentYaw >= targetYaw - 5 && currentYaw <= targetYaw + 5) {
+            System.out.println("Within Target Angle");
+        }
+        else {
+            System.out.println("Outside Target Angle");
+        }
     }
 
     @Override
@@ -106,14 +110,14 @@ public class Drivetrain extends SubsystemBase {
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void setAngle(double targetAngle){
-         if (currentAngle >= 220 && currentAngle <= 260){
-            System.out.println("Within Target Angle");
-         }
-         else {
-            System.out.println("Not Within Target Angle");
-         }
-    }
+    // public void setAngle(double targetAngle){
+    //      if (currentAngle >= 220 && currentAngle <= 260){
+    //         System.out.println("Within Target Angle");
+    //      }
+    //      else {
+    //         System.out.println("Not Within Target Angle");
+    //      }
+    // }
 
 }
 

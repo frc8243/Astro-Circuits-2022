@@ -25,7 +25,7 @@ public class BallSuckSpit extends CommandBase {
     @Override
     public void execute() {
         this.intake.setMotor(power);
-        // System.out.println("Intake Power is " + power);
+        System.out.println("Intake Power is " + power);
         //SmartDashboard.putNumber("Intake power ", power);
     }
 

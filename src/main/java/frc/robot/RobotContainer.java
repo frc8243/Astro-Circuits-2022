@@ -182,6 +182,7 @@ public class RobotContainer {
     System.out.println("Camera not found");
 
   }
+  setAngle(240, ahrs.getAngle());
   CameraServer.startAutomaticCapture();
   }
 
@@ -244,13 +245,13 @@ public class RobotContainer {
     m_armSystem.armEnabled();
   }
   public void setAngle(double targetAngle, double currentAngle){
-    currentAngle = ahrs.getAngle();
-    if (currentAngle >= 220 && currentAngle <= 260){
-       System.out.println("Within Target Angle");
-    }
-    else {
-       System.out.println("Not Within Target Angle");
-    }
+      currentAngle = ahrs.getAngle();
+      if (currentAngle >= targetAngle - 20 && currentAngle <= targetAngle + 20){
+        System.out.println("Within Target Angle");
+      }
+      else {
+        System.out.println("Not Within Target Angle");
+      }
 }
 
 }

@@ -27,7 +27,6 @@ import edu.wpi.first.wpilibj.XboxController;
 public class RobotContainer {
   AHRS ahrs = new AHRS(SPI.Port.kMXP);
   private static RobotContainer m_robotContainer = new RobotContainer();
-
   // The robot's subsystems
   public final Drivetrain m_drivetrain = new Drivetrain();
   // public final Arm m_arm = new Arm();

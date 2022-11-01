@@ -16,6 +16,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import frc.robot.RobotContainer;
 
 
@@ -30,6 +31,7 @@ import frc.robot.RobotContainer;
 public class Shooter extends SubsystemBase {
 
     DoubleSolenoid pitchSolenoid = null;
+
     public Shooter() {
         pitchSolenoid = new DoubleSolenoid(0, PneumaticsModuleType.CTREPCM,  RobotContainer.SHOOTER_PITCH_SOLENOID_DEPLOY, RobotContainer.SHOOTER_PITCH_SOLENOID_RETRACT);
     }
@@ -41,9 +43,11 @@ public class Shooter extends SubsystemBase {
     public void pitchDown() {
         pitchSolenoid.set(Value.kReverse);
     }
-    @Override
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand())
+}
+
 }
 

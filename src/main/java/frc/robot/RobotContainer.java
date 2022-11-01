@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.XboxController;
 
@@ -34,13 +35,15 @@ public class RobotContainer {
   public final Climber m_climber = new Climber();
   public final Intake m_intake = new Intake();
   public final Field2d m_field = new Field2d();
-
+  public static Shooter m_shooter = null;
   // Joysticks
   private final XboxController xboxController1 = new XboxController(0);
 
   // Arm Commands
   // public static ArmUp armup = new ArmUp
-
+  // Solenoids
+  public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 0;
+  public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 1;
   // A chooser for autonomous commands
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -71,7 +74,7 @@ public class RobotContainer {
         () -> xboxController1.getRawAxis(XboxConstants.RIGHT_STICK_X)));
     // m_arm.setDefaultCommand(new ArmMovement(m_arm, 0));
     m_intake.setDefaultCommand(new BallSuckSpit(m_intake, 0));
-
+    m_shooter = new Shooter();
     CommandBase position1=  new SequentialCommandGroup(
       //new ArmUp(m_armSystem),
       (new BallSuckSpit(m_intake, 1)).withTimeout(0.5),
@@ -127,6 +130,8 @@ public class RobotContainer {
     // ArmMovement(m_arm, -0.5));
     new JoystickButton(xboxController1, XboxConstants.B_BUTTON).whenHeld(new BallSuckSpit(m_intake, 0.9));
     new JoystickButton(xboxController1, XboxConstants.X_BUTTON).whenHeld(new BallSuckSpit(m_intake, -0.5));
+    new JoystickButton(xboxController1, XboxConstants.A_BUTTON).whenPressed(new ShooterUp());
+    new JoystickButton(xboxController1, XboxConstants.Y_BUTTON).whenPressed(new ShooterDown());
     // new JoystickButton(xboxController1, XboxConstants.Y_BUTTON).whenHeld(new Autonomous(.30, 5, m_drivetrain));
 
     new JoystickButton(xboxController1, XboxConstants.RIGHT_BUMPER).whenPressed(new ConditionalCommand(new ArmUp(m_armSystem), new PrintCommand("Arm Already Up"), m_armSystem::armIsDown),false);                                                                                                 

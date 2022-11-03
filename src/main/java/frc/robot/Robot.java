@@ -15,15 +15,12 @@ package frc.robot;
 import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
 
-import java.lang.ModuleLayer.Controller;
 
 
 
 
-import edu.wpi.first.wpilibj.SPI;
 
 import edu.wpi.first.hal.HAL;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -64,7 +61,7 @@ public class Robot extends TimedRobot {
     private final int BACK_BUTTON = 7;
   */
   //public static final ADIS16448_IMU imu =new ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, ADIS16448_IMU.CalibrationTime._1s);
-    public static Shooter m_shooter = new Shooter();
+   public static Shooter m_shooter = new Shooter();
     
     
     @Override

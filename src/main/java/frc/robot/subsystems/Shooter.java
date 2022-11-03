@@ -33,7 +33,7 @@ public class Shooter extends SubsystemBase {
     DoubleSolenoid pitchSolenoid = null;
 
     public Shooter() {
-        pitchSolenoid = new DoubleSolenoid(0, PneumaticsModuleType.CTREPCM,  RobotContainer.SHOOTER_PITCH_SOLENOID_DEPLOY, RobotContainer.SHOOTER_PITCH_SOLENOID_RETRACT);
+        pitchSolenoid = new DoubleSolenoid(1, PneumaticsModuleType.CTREPCM,  RobotContainer.SHOOTER_PITCH_SOLENOID_DEPLOY, RobotContainer.SHOOTER_PITCH_SOLENOID_RETRACT);
     }
   
     public void pitchUp() {
